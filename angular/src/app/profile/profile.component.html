@@ -1,0 +1,17 @@
+<p>profile works!</p>
+<div class="container">
+    <h1>Gayal</h1>
+    <h2>Hello Bitch</h2>
+
+    <form>
+  <div class="form-group">
+    <label for="formGroupExampleInput">Example label</label>
+    <input type="text" [formControl]="name" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Another label</label>
+    <input type="text" [formControl]="email" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+  </div>
+  <button (click)='save()' type="button" class="btn-btn-primary">Save</button>
+</form>
+</div>
