@@ -1,13 +1,14 @@
 <div class="panel panel-dafault">
-    <div class="panel-heading">{{ element.name }}</div>
+    <div class="panel-heading" #heading>{{ name }}</div>
     <div class="panel-body">
       <p>
-        <strong *ngIf="element.type==='server'" style="color: red">
+        <!-- <strong *ngIf="element.type==='server'" style="color: red">
           {{ element.content }}
         </strong>
         <em *ngIf="element.type==='blueprint'">
           {{ element.content }}
-        </em>
+        </em> -->
+        <ng-content></ng-content>
       </p>
     </div>
   </div>
