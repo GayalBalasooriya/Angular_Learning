@@ -6,20 +6,20 @@
       </button>
       <br><br>
       <ul class="list-group">
-        <div *ngIf="onlyOdd">
+        <!-- <div *ngIf="onlyOdd">
           <li class="list-group-item"
           [ngClass]="{odd: oddNumber % 2 !== 0}"
           [ngStyle]="{backgroundColor: oddNumber % 2 !== 0 ? 'yellow' : 'transparent'}"
           *ngFor="let oddNumber of odd">
             {{ oddNumber }}
           </li>
-        </div>
+        </div> -->
         <div *ngIf="!onlyOdd">
           <li class="list-group-item"
           *ngFor="let evenNumber of even">
             {{ evenNumber }}
           </li>
-        </div>
+        </div> 
         <!-- <ng-template [ngIf]="!onlyOdd">
           <div>
             <li class="list-group-item"
@@ -28,9 +28,26 @@
             </li>
           </div>  
         </ng-template> -->
+        <div *appUnless="onlyOdd">
+          <li class="list-group-item"
+          [ngClass]="{odd: oddNumber % 2 !== 0}"
+          [ngStyle]="{backgroundColor: oddNumber % 2 !== 0 ? 'yellow' : 'transparent'}"
+          *ngFor="let oddNumber of odd">
+            {{ oddNumber }}
+          </li>
+        </div>
       </ul>
       <p appBasicHighlight>Style me with basic directive</p>
       <p appBetterHighlight [defaultColor]="'yellow'" [highlightColor]="'red'">Style me with basic directive</p>
+    
+      <div [ngSwitch]="value">
+        <p *ngSwitchCase="5">Value is 5</p>
+        <p *ngSwitchCase="10">Value is 10</p>
+        <p *ngSwitchCase="100">Value is 100</p>
+        <p *ngSwitchDefault>Value is Default</p>
+      </div>
+
     </div>
+
   </div>
 </div>
